@@ -19,7 +19,7 @@ public class Product {
 
 
     @ManyToOne
-    @JsonBackReference  // relacion con Categorry//
+    @JsonBackReference  // relacion con Categorry -Products//
     @JoinColumn(name = "category_id")
     private Category category;
 
