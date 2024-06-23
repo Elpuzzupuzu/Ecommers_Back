@@ -52,7 +52,10 @@ public class ProductController {
         return productService.searchProducts(keyword);
     }
 
-
+    @GetMapping("/by-category")
+    public List<Product> getProductsByCategory(@RequestParam String categoryName) {
+        return productService.getProductsByCategory(categoryName);
+    }
 
 
 

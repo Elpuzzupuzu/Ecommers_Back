@@ -1,5 +1,6 @@
 package com.expendedora.GatorGate.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 
@@ -15,7 +16,10 @@ public class Product {
     private Double price;
     private Integer stock;
 
+
+
     @ManyToOne
+    @JsonBackReference  // relacion con Categorry//
     @JoinColumn(name = "category_id")
     private Category category;
 
