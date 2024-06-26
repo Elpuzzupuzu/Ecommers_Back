@@ -16,6 +16,11 @@ public class Product {
     private Double price;
     private Integer stock;
 
+    @Transient
+    private Integer sold;
+
+
+
 
 
     @ManyToOne
@@ -81,4 +86,14 @@ public class Product {
     public void setCategory(Category category) {
         this.category = category;
     }
+
+    public Integer getSold() {
+        return sold;
+    }
+
+    public void setSold(Integer sold) {
+        this.sold = sold;
+    }
 }
+
+

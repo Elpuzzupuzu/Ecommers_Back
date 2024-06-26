@@ -22,10 +22,29 @@ public class ProductController {
         List<Product> products = productService.getAllProducts();
         return products.stream()
                 .map(product -> new ProductDTO(
+                        product.getId(),
                         product.getName(),
                         product.getImg(),
                         product.getDescription(),
+                        product.getSold(),
+
                         product.getPrice()))
+                .collect(Collectors.toList());
+    }
+
+
+    @GetMapping("/summary2")
+    public List<ProductDTO> getAllProductSummaries2() {
+        List<Product> products = productService.getAllProducts();
+        return products.stream()
+                .map(product -> new ProductDTO(
+                        product.getId(),
+                        product.getName(),
+                        product.getImg(),
+                        product.getDescription(),
+                        product.getSold(),
+                        product.getPrice()))
+
                 .collect(Collectors.toList());
     }
 
